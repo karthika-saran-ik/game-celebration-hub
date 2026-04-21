@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Trophy, PartyPopper, Zap, Heart } from "lucide-react";
+import { Trophy, PartyPopper, Zap, Heart, Hand } from "lucide-react";
 import WeeklyLeaderboard from "@/components/WeeklyLeaderboard";
 import GameCompletion from "@/components/GameCompletion";
+import TapAndBuild from "@/components/TapAndBuild";
 
-type Screen = "home" | "leaderboard" | "completion";
+type Screen = "home" | "leaderboard" | "completion" | "tapbuild";
 
 const Index = () => {
   const [screen, setScreen] = useState<Screen>("home");
 
   if (screen === "leaderboard") return <WeeklyLeaderboard onBack={() => setScreen("home")} />;
   if (screen === "completion") return <GameCompletion onBack={() => setScreen("home")} />;
+  if (screen === "tapbuild") return <TapAndBuild onBack={() => setScreen("home")} />;
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4">
@@ -65,11 +67,29 @@ const Index = () => {
             </div>
             <div className="text-left flex-1">
               <p className="font-display font-bold text-foreground group-hover:text-accent transition-colors">
-                Game Completion
+                Course Completion
               </p>
-              <p className="text-xs text-muted-foreground mt-0.5">Congratulations & achievements</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Congratulations & certificate</p>
             </div>
             <div className="text-muted-foreground group-hover:text-accent transition-colors">→</div>
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => setScreen("tapbuild")}
+            className="w-full p-5 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all flex items-center gap-4 group"
+          >
+            <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center">
+              <Hand className="w-6 h-6 text-primary" />
+            </div>
+            <div className="text-left flex-1">
+              <p className="font-display font-bold text-foreground group-hover:text-primary transition-colors">
+                Tap & Build
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">Build the sequence by tapping options</p>
+            </div>
+            <div className="text-muted-foreground group-hover:text-primary transition-colors">→</div>
           </motion.button>
         </div>
 
