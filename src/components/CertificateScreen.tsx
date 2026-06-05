@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Award, Star, Download, Share2, BadgeCheck } from "lucide-react";
+import { ArrowLeft, Award, Download, Share2, BadgeCheck } from "lucide-react";
+import certificateAsset from "@/assets/certificate_test.jpg.asset.json";
+
 
 const CertificateScreen = ({ onBack }: { onBack: () => void }) => {
   return (
@@ -46,109 +48,20 @@ const CertificateScreen = ({ onBack }: { onBack: () => void }) => {
           </p>
         </motion.div>
 
-        {/* Certificate Card */}
+        {/* Certificate Image */}
         <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 0.5, type: "spring", stiffness: 100, damping: 20 }}
-          className="relative"
+          className="relative rounded-2xl overflow-hidden border border-gold/20 shadow-2xl bg-white"
         >
-          {/* Decorative border frame */}
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/30 via-gold/10 to-gold/30 p-[1.5px]">
-            <div className="w-full h-full rounded-2xl bg-card" />
-          </div>
-
-          {/* Inner decorative corners */}
-          <div className="relative rounded-2xl bg-card border border-gold/20 p-6 overflow-hidden">
-            {/* Corner ornaments */}
-            <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-gold/40 rounded-tl-sm" />
-            <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-gold/40 rounded-tr-sm" />
-            <div className="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-gold/40 rounded-bl-sm" />
-            <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-gold/40 rounded-br-sm" />
-
-            {/* Certificate content */}
-            <div className="text-center pt-4 pb-2">
-              {/* Seal */}
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.9, type: "spring", stiffness: 200 }}
-                className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30 flex items-center justify-center mb-4"
-              >
-                <BadgeCheck className="w-8 h-8 text-gold" />
-              </motion.div>
-
-              <p className="text-xs font-semibold text-gold tracking-[0.2em] uppercase mb-2">
-                This certifies that
-              </p>
-
-              <motion.h2
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.0 }}
-                className="text-2xl font-display font-bold text-foreground mb-2"
-              >
-                Alex Johnson
-              </motion.h2>
-
-              <div className="w-16 h-[1px] bg-gold/40 mx-auto mb-3" />
-
-              <p className="text-xs text-muted-foreground leading-relaxed mb-1">
-                has successfully completed
-              </p>
-              <p className="text-lg font-display font-bold text-primary mb-1">
-                Statistics Foundations
-              </p>
-              <p className="text-xs text-muted-foreground mb-4">
-                with 94% overall accuracy
-              </p>
-
-              {/* Star rating */}
-              <div className="flex justify-center gap-1 mb-4">
-                {[0, 1, 2].map((i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ delay: 1.2 + i * 0.15, type: "spring", stiffness: 300 }}
-                  >
-                    <Star className="w-6 h-6 fill-gold text-gold drop-shadow-md" />
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Course details */}
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                <div className="bg-secondary/50 rounded-lg p-3">
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Modules</p>
-                  <p className="text-sm font-display font-bold text-foreground">5/5</p>
-                </div>
-                <div className="bg-secondary/50 rounded-lg p-3">
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Total XP</p>
-                  <p className="text-sm font-display font-bold text-xp">12,480</p>
-                </div>
-                <div className="bg-secondary/50 rounded-lg p-3">
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Time</p>
-                  <p className="text-sm font-display font-bold text-foreground">18h 42m</p>
-                </div>
-                <div className="bg-secondary/50 rounded-lg p-3">
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Best Streak</p>
-                  <p className="text-sm font-display font-bold text-streak">21 days</p>
-                </div>
-              </div>
-
-              {/* Date & ID */}
-              <div className="border-t border-border pt-3">
-                <p className="text-xs text-muted-foreground">
-                  Completed on <span className="text-foreground font-medium">June 5, 2026</span>
-                </p>
-                <p className="text-[10px] text-muted-foreground/60 mt-1 font-mono">
-                  CERT-ID: ML-SF-2026-0605-AJ
-                </p>
-              </div>
-            </div>
-          </div>
+          <img
+            src={certificateAsset.url}
+            alt="Certificate of Completion"
+            className="w-full h-auto block"
+          />
         </motion.div>
+
 
         {/* Verified badge */}
         <motion.div
