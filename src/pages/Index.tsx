@@ -14,6 +14,7 @@ const Index = () => {
   if (screen === "leaderboard") return <WeeklyLeaderboard onBack={() => setScreen("home")} />;
   if (screen === "completion") return <GameCompletion onBack={() => setScreen("home")} />;
   if (screen === "tapbuild") return <TapAndBuild onBack={() => setScreen("home")} />;
+  if (screen === "certificate") return <CertificateScreen onBack={() => setScreen("home")} />;
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4">
