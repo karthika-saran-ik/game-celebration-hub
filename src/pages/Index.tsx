@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Trophy, PartyPopper, Zap, Heart, Hand } from "lucide-react";
+import { Trophy, PartyPopper, Zap, Heart, Hand, Medal } from "lucide-react";
 import WeeklyLeaderboard from "@/components/WeeklyLeaderboard";
 import GameCompletion from "@/components/GameCompletion";
 import TapAndBuild from "@/components/TapAndBuild";
+import CertificateScreen from "@/components/CertificateScreen";
 
-type Screen = "home" | "leaderboard" | "completion" | "tapbuild";
+type Screen = "home" | "leaderboard" | "completion" | "tapbuild" | "certificate";
 
 const Index = () => {
   const [screen, setScreen] = useState<Screen>("home");
