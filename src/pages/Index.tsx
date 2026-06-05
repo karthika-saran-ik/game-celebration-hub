@@ -93,6 +93,24 @@ const Index = () => {
             </div>
             <div className="text-muted-foreground group-hover:text-primary transition-colors">→</div>
           </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => setScreen("certificate")}
+            className="w-full p-5 rounded-2xl bg-card border border-border hover:border-gold/30 transition-all flex items-center gap-4 group"
+          >
+            <div className="w-12 h-12 rounded-xl bg-gold/15 flex items-center justify-center">
+              <Medal className="w-6 h-6 text-gold" />
+            </div>
+            <div className="text-left flex-1">
+              <p className="font-display font-bold text-foreground group-hover:text-gold transition-colors">
+                Your Certificate
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">View & download your certificate</p>
+            </div>
+            <div className="text-muted-foreground group-hover:text-gold transition-colors">→</div>
+          </motion.button>
         </div>
 
         {/* Footer */}
