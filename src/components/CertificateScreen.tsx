@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Award, Download, Share2, BadgeCheck } from "lucide-react";
+import { ArrowLeft, Award, Download, BadgeCheck } from "lucide-react";
 import certificateAsset from "@/assets/certificate_test.jpg.asset.json";
 
 
@@ -79,15 +79,11 @@ const CertificateScreen = ({ onBack }: { onBack: () => void }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.7 }}
-          className="mt-6 space-y-3"
+          className="mt-6"
         >
           <button className="w-full py-3.5 rounded-xl bg-primary text-primary-foreground font-display font-bold text-sm flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
             <Download className="w-4 h-4" />
             Download Certificate
-          </button>
-          <button className="w-full py-3 rounded-xl bg-secondary text-foreground font-medium text-sm flex items-center justify-center gap-2 hover:bg-secondary/80 transition-colors">
-            <Share2 className="w-4 h-4" />
-            Share Achievement
           </button>
         </motion.div>
       </div>
