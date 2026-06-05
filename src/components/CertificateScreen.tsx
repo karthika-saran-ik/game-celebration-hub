@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Award, Download, Share2, BadgeCheck } from "lucide-react";
+import { ArrowLeft, Award, Download, BadgeCheck } from "lucide-react";
 import certificateAsset from "@/assets/certificate_test.jpg.asset.json";
 
 
